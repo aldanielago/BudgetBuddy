@@ -7,7 +7,7 @@ const port = 3000;
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('Hola mi server en express')
+  res.send('Hello, mi server in express')
 });
 
 router_general(app);
