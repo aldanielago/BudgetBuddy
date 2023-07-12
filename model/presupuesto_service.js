@@ -1,10 +1,10 @@
 class Presupuesto {
 
-  crearPresupuesto(id_usuario, id_categoria, monto){
+  async crearPresupuesto(id_usuario, id_categoria, monto){
 
   }
 
-  eliminarPresupuesto(id_presupuesto){
+  async eliminarPresupuesto(id_presupuesto){
 
   }
 }

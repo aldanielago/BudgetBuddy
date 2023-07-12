@@ -1,14 +1,14 @@
 class Ingreso {
 
-  crearIngreso(id_usuario, id_categoria, monto, descripcion, fecha){
+  async crearIngreso(id_usuario, id_categoria, monto, descripcion, fecha){
 
   }
 
-  consultarIngresos(id_usuario){
+  async consultarIngresos(id_usuario){
 
   }
 
-  eliminarIngreso(id_ingreso){
+  async eliminarIngreso(id_ingreso){
 
   }
 }
