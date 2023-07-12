@@ -1,8 +1,6 @@
-const con = require('../controller/connection');
 const connection = require('../controller/connection')
 
 class Egreso {
-
   constructor() {
     this.connection = connection
     this.connection.on('error', function(err) {
@@ -11,7 +9,7 @@ class Egreso {
   }
 
   async crearEgreso(id_usuario, id_categoria, id_estado, monto, fecha_pago){
-    const query = `INSERT INTO egreso (id_usuario, id_categoria, id_estado, monto, fecha_pago) VALUES (${id_usuario}, ${id_categoria}, ${id_estado}, ${monto}, '${fecha_pago}')`;
+    const query = `INSERT INTO egreso (id_usuario, id_categoria, id_estado, monto_egreso, fecha_pago) VALUES (${id_usuario}, ${id_categoria}, ${id_estado}, ${monto}, '${fecha_pago}')`;
     const rta = await this.connection.query(query);
     return rta.rows;
   }

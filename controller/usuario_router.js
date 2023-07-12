@@ -16,7 +16,6 @@ router.post('/sign_up', async (req, res) => {
     const usuarioEncontrado = await service.buscarUsuario(nombre_usuario)
     if (usuarioEncontrado) {
       throw boom.badRequest('El usuario ya existe')
-      return
     }
 
     const usuario = await service.crearUsuario(nombre_usuario, contraseña, email)

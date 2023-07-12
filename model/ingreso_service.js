@@ -1,4 +1,12 @@
+const connection = require('../controller/connection')
+
 class Ingreso {
+  constructor() {
+    this.connection = connection
+    this.connection.on('error', function(err) {
+      console.log("[mysql error]",err);
+    });
+  }
 
   async crearIngreso(id_usuario, id_categoria, monto, descripcion, fecha){
     const query = `INSERT INTO ingreso (id_usuario, id_categoria, monto, descripcion, fecha) VALUES (${id_usuario}, ${id_categoria}, ${monto}, '${descripcion}', '${fecha}')`;
