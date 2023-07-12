@@ -1,17 +1,17 @@
 :root {
-    --primary: #D5CEA3;
-    --secondary: #E5E5CB;
-    --dark: #3C2A21;
+  --primary: #D5CEA3;
+  --secondary: #E5E5CB;
+  --dark: #3C2A21;
 }
 
 h1, h2, h3 {
-    font-family: 'Kalam', cursive;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: 400;
+  font-family: 'Kalam', cursive;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: 400;
 }
 
 body {
-    background-color: var(--secondary);
+  background-color: var(--secondary);
 }
 
 * {
@@ -19,141 +19,106 @@ body {
 	box-sizing: border-box;
 }
 
-/*Estilos para el nav*/
-#nav {
-    position: fixed;
-
-    width: 100vw;
-    height: 40px;
-    top: 0;
-    background-color: var(--primary);
-    border-bottom: 0.5px solid var(--dark);
-}
-
-#nav ul {
-    list-style: none;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 8px;
-}
-
-#nav ul li {
-    width: 150px;
-    height: 25px;
-    text-align: center;
-    border-radius: 10px;
-    transition: all 300ms ease-in-out;
-}
-
-#nav ul li:hover {
-    cursor: pointer;
-    background-color: var(--secondary);
-    color: rgb(36, 83, 36);
-    transition: all 300ms ease-in-out;
-}
-
 /*Estilos para el sign up*/
 .formulario_sign_up {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
 .contenedor_sign_up {
-    display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: stretch;
-    padding: 20px 30px;
-    gap: 10px;
-	width: 400px;
-	height: 460px;
-	border: 3px solid;
-	border-radius: 3%;
-	box-shadow:  5px 5px 20px 2px rgb(175, 172, 172);
-    background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px 30px;
+  gap: 10px;
+  width: 400px;
+  height: 460px;
+  border: 3px solid;
+  border-radius: 3%;
+  box-shadow:  5px 5px 20px 2px rgb(175, 172, 172);
+  background-color: var(--secondary);
 }
 
 .imagen_sign_up {
-    position: relative;
-    margin: 0px;
-    width: 400px;
+  position: relative;
+  margin: 0px;
+  width: 400px;
 }
 
 .invisible {
-    display: none;
+  display: none;
 }
 
 /* Estilos para el login*/
 .formulario_login {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: stretch;
-    padding: 20px 30px;
-    gap: 10px;
-	width: 400px;
-	height: 460px;
-	border: 3px solid;
-	border-radius: 3%;
-    margin: 80px auto;
-	box-shadow:  5px 5px 20px 2px rgb(175, 172, 172);
-    background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px 30px;
+  gap: 10px;
+  width: 400px;
+  height: 460px;
+  border: 3px solid;
+  border-radius: 3%;
+  margin: 80px auto;
+  box-shadow:  5px 5px 20px 2px rgb(175, 172, 172);
+  background-color: var(--secondary);
 }
 
 .formulario_egreso {
-    display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: stretch;
-    padding: 20px 30px;
-    gap: 10px;
-	width: 400px;
-	height: 540px;
-	border: 3px solid;
-	border-radius: 3%;
-    margin: 40px auto;
-	box-shadow:  5px 5px 20px 2px rgb(175, 172, 172);
-    background-color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px 30px;
+  gap: 10px;
+  width: 400px;
+  height: 540px;
+  border: 3px solid;
+  border-radius: 3%;
+  margin: 40px auto;
+  box-shadow:  5px 5px 20px 2px rgb(175, 172, 172);
+  background-color: var(--secondary);
 }
 
 select {
-    height: 60px;
+  height: 60px;
 }
 
 /*Estilos para las consultas*/
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px   ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px   ;
 
-    margin-top: 90px;
+  margin-top: 90px;
 }
 
 table {
-    width: 1140px;
-    table-layout: fixed;
-    border-collapse:collapse;
-    border: 0.5px solid var(--dark);
+  width: 1140px;
+  table-layout: fixed;
+  border-collapse:collapse;
+  border: 0.5px solid var(--dark);
 }
 
 thead {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 table tr {
-    height: 50px;
-    padding: 10px;
-    border: 0.5px solid var(--dark);
+  height: 50px;
+  padding: 10px;
+  border: 0.5px solid var(--dark);
 }
 
 td {
-    padding: 10px;
-    text-align: center;
+  padding: 10px;
+  text-align: center;
 }
