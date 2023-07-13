@@ -11,13 +11,13 @@
   <title>Document</title>
 </head>
 <body>
-  <section id="section_signup" class="invisible">
+  <section id="section_signup" class="">
     <form class="formulario_sign_up">
       <img class="imagen_sign_up" src="/assets/buggetBunny.png">
       <div class="contenedor_sign_up">
         <h1>Registrate</h1>
         <div class="form-floating">
-          <input type="text" class="form-control" placeholder="Nombre" name="nombre_usuario" maxlength="50" required>
+          <input type="text" class="form-control" placeholder="Nombre" name="nombre_usuario" maxlength="50"  required>
           <label>Nombre</label>
         </div>
         <div class="form-floating">
@@ -28,7 +28,8 @@
           <input type="email" class="form-control" placeholder="Correo" name="correo" minlength="8" maxlength="20" required>
           <label>Correo</label>
         </div>
-        <button type="button" class="btn btn-success btn-lg">Registrar</button>
+        <button type="button" id="sign_up_registrar_usuario" class="btn btn-success btn-lg">Registrar</button>
+        <button type="button" id="sign_up_iniciar_sesion" class="btn btn-secondary btn-lg">Iniciar sesión</button>
       </div>
     </form>
   </section>
@@ -114,7 +115,7 @@
         <label>Monto limite</label>
       </div>
       <label for="categoria">Elija la categoría a la que asignará el presupuesto</label>
-      <select name="categoria" id="categoria" required class="form-control">
+      <select name="categoria" id="categoria_pre" required class="form-control">
         <option value="1">Alimentacion</option>
         <option value="2">Transporte</option>
         <option value="3">Servicios</option>
@@ -131,7 +132,7 @@
     </form>
   </section>
 
-  <section id="section_consulta_ingresosS" class="container">
+  <section id="section_consulta_ingresosS" class="container invisible>
     <h2>Registros de ingresos</h2>
     <table>
       <thead>
@@ -149,7 +150,7 @@
     <button type="button" class="btn btn-success btn-lg">Nuevo ingreso</button>
   </section>
 
-  <section id="section_consulta_egreso" class="container">
+  <section id="section_consulta_egreso" class="container invisible">
     <h2>Registros de egresos</h2>
     <table>
       <thead>

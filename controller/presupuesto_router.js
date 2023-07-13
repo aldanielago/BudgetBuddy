@@ -13,10 +13,10 @@ router.post('/crear', async (req, res) => {
       return;
     }
 
-    const presupuesto = await service.crearPresupuesto(id_usuario, id_categoria, monto);
-    res.status(201).json(presupuesto);
+    await service.crearPresupuesto(id_usuario, id_categoria, monto);
+    res.status(200).json({ mensaje: 'Presupuesto creado' });
   } catch (error) {
-    next(error);
+    res.status(500).json({ error: 'Error raro' });
   }
 });
 
@@ -24,10 +24,15 @@ router.post('/crear', async (req, res) => {
 router.delete('/eliminar', async (req, res) => {
   try {
     const { id_presupuesto } = req.body;
-    const presupuesto = await service.eliminarPresupuesto(id_presupuesto);
-    res.status(200).json(presupuesto);
+    if (!id_presupuesto) {
+      res.status(400).json({ error: 'Faltan datos' });
+      return;
+    }
+
+    await service.eliminarPresupuesto(id_presupuesto);
+    res.status(200).json({ mensaje: 'Presupuesto eliminado' });
   } catch (error) {
-    next(error);
+    res.status(500).json({ error: 'Error raro' });
   }
 });
 

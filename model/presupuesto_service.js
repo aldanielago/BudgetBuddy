@@ -8,16 +8,16 @@ class Presupuesto {
     });
   }
 
+  // No devolverá nada, solo creará el presupuesto
   async crearPresupuesto(id_usuario, id_categoria, monto){
     const query = `INSERT INTO presupuesto (id_usuario, id_categoria, monto_limite) VALUES (${id_usuario}, ${id_categoria}, ${monto})`;
-    const rta = await this.connection.query(query);
-    return rta.rows;
+    await this.connection.query(query);
   }
 
+  // No devolverá nada, solo eliminará el presupuesto
   async eliminarPresupuesto(id_presupuesto){
     const query = `DELETE FROM presupuesto WHERE id_presupuesto = ${id_presupuesto}`;
-    const rta = await this.connection.query(query);
-    return rta.rows;
+    await this.connection.query(query);
   }
 }
 

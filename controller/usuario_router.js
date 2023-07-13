@@ -1,27 +1,30 @@
 const express  = require('express');
-const boom = require('@hapi/boom');
 
 const router = express.Router();
-const ServiciosUsuario = require('../model/usuario_service')
+const ServiciosUsuario = require('../model/usuario_service');
 const service = new ServiciosUsuario();
 
-//Crear usuario retorna 400 si algo falló o 201 si se creó correctamente
+//Crear usuario retorna 400 si algo falló, 500 si es otro error raro y 200 si se creó correctamente
 router.post('/sign_up', async (req, res) => {
   try {
-    const { nombre_usuario, contraseña, email } = req.body
-    if (!nombre_usuario || !contraseña || !email) {
-      throw boom.badRequest('Faltan datos')
+    console.log(req.body)
+    const { nombre_usuario, contrasena, email } = req.body
+    if (!nombre_usuario || !contrasena || !email) {
+      res.status(400).json({ error: 'Faltan datos' })
+      return
     }
 
     const usuarioEncontrado = await service.buscarUsuario(nombre_usuario)
     if (usuarioEncontrado) {
-      throw boom.badRequest('El usuario ya existe')
+      res.status(400).json({ error: 'El usuario ya existe' })
+      return
     }
 
-    const usuario = await service.crearUsuario(nombre_usuario, contraseña, email)
-    res.status(201).json(usuario);
+    const usuario = await service.crearUsuario(nombre_usuario, email, contrasena)
+    res.status(200).json(usuario)
+
   } catch (error) {
-    next(error);
+    res.status(500).json({ error: 'Error raro' })
   }
 });
 
@@ -40,9 +43,9 @@ router.post('/log_in', async (req, res) => {
       return
     }
 
-    res.status(201).json(usuario)
+    res.status(200).json(usuario)
   } catch (error) {
-    next(error);
+    res.status(500).json({ error: 'Error raro' })
   }
 });
 

@@ -1,9 +1,13 @@
+const con = require("../../controller/connection");
+
+const urlBase = "http://localhost:3000/api";
+
 // Crear usuario
-async function signUp(nombre, contraseña, email) {
+async function signUp(nombre, contrasena, email) {
   const url = `${urlBase}/usuario/sign_up`;
   const body = {
     nombre_usuario: nombre,
-    contraseña: contraseña,
+    contrasena: contrasena,
     email: email
   };
   const response = await fetch(url, {
@@ -20,7 +24,6 @@ async function signUp(nombre, contraseña, email) {
 // Autenticar usuario
 async function login(nombre, contraseña){
   const url = `${urlBase}/usuario/log_in`;
-  { nombre, contraseña }
   const body = {
     nombre_usuario: nombre,
     contraseña: contraseña
@@ -31,15 +34,14 @@ async function login(nombre, contraseña){
     headers: {
       "Content-Type": "application/json"
     }
-  })
-
+  });
   const json = await response.json();
   return json;
 }
 
 // Crear presupuesto
 async function crearPresupuesto(id_usuario, id_categoria, id_estado, monto, fecha_pago){
-  const url = `${urlBase}/presupuesto/crear_presupuesto`;
+  const url = `${urlBase}/presupuesto/crear`;
   const body = {
     id_usuario: id_usuario,
     id_categoria: id_categoria,
@@ -60,7 +62,7 @@ async function crearPresupuesto(id_usuario, id_categoria, id_estado, monto, fech
 
 // Eliminar presupuesto
 async function eliminarPresupuesto(id_presupuesto){
-  const url = `${urlBase}/presupuesto/eliminar_presupuesto`;
+  const url = `${urlBase}/presupuesto/eliminar`;
   const body = {
     id_presupuesto: id_presupuesto
   };
@@ -77,7 +79,7 @@ async function eliminarPresupuesto(id_presupuesto){
 
 // Crear egreso
 async function crearEgreso(id_usuario, id_categoria, id_estado, monto, fecha_pago){
-  const url = `${urlBase}/egreso/crear_egreso`;
+  const url = `${urlBase}/egreso/crear`;
   const body = {
     id_usuario: id_usuario,
     id_categoria: id_categoria,
@@ -98,7 +100,7 @@ async function crearEgreso(id_usuario, id_categoria, id_estado, monto, fecha_pag
 
 // Consultar egreso por usuario
 async function consultarEgresos(id_usuario){
-  const url = `${urlBase}/egreso/consultar_egresos`;
+  const url = `${urlBase}/egreso/consultar`;
   const body = {
     id_usuario: id_usuario
   };
@@ -115,7 +117,7 @@ async function consultarEgresos(id_usuario){
 
 // Eliminar egreso
 async function eliminarEgreso(id_egreso){
-  const url = `${urlBase}/egreso/eliminar_egreso`;
+  const url = `${urlBase}/egreso/eliminar`;
   const body = {
     id_egreso: id_egreso
   };
@@ -132,7 +134,7 @@ async function eliminarEgreso(id_egreso){
 
 // Crear ingreso
 async function crearIngreso(id_usuario, id_categoria, id_estado, monto, fecha_pago){
-  const url = `${urlBase}/ingreso/crear_ingreso`;
+  const url = `${urlBase}/ingreso/crear`;
   const body = {
     id_usuario: id_usuario,
     id_categoria: id_categoria,
@@ -153,7 +155,7 @@ async function crearIngreso(id_usuario, id_categoria, id_estado, monto, fecha_pa
 
 // Consultar ingreso por usuario
 async function consultarIngresos(id_usuario){
-  const url = `${urlBase}/ingreso/consultar_ingresos`;
+  const url = `${urlBase}/ingreso/consultar`;
   const body = {
     id_usuario: id_usuario
   };
@@ -170,7 +172,7 @@ async function consultarIngresos(id_usuario){
 
 // Eliminar ingreso
 async function eliminarIngreso(id_ingreso){
-  const url = `${urlBase}/ingreso/eliminar_ingreso`;
+  const url = `${urlBase}/ingreso/eliminar`;
   const body = {
     id_ingreso: id_ingreso
   };
