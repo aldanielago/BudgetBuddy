@@ -1,7 +1,7 @@
 const express  = require('express');
 
 const router = express.Router();
-const ServiciosPresupuesto = require('../model/presupuesto_service');
+const ServiciosPresupuesto = require('../service/presupuesto_service');
 const service = new ServiciosPresupuesto();
 
 // Crear presupuesto
@@ -32,7 +32,7 @@ router.delete('/eliminar', async (req, res) => {
     await service.eliminarPresupuesto(id_presupuesto);
     res.status(200).json({ mensaje: 'Presupuesto eliminado' });
   } catch (error) {
-    res.status(500).json({ error: 'Error raro' });
+    res.status(500).json({ error: 'Error raro' + error });
   }
 });
 

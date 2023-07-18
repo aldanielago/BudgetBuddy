@@ -1,4 +1,4 @@
-const connection = require('../controller/connection')
+const connection = require('../router/connection')
 
 class Ingreso {
   constructor() {
@@ -11,20 +11,29 @@ class Ingreso {
   // No devolverá nada, solo creará el ingreso
   async crearIngreso(id_usuario, fuente_ingreso, monto_ingreso, fecha_ingreso){
     const query = `INSERT INTO ingreso (id_usuario, fuente_ingreso, monto_ingreso, fecha_ingreso) VALUES (${id_usuario}, ${fuente_ingreso}, ${monto_ingreso} '${fecha_ingreso}')`;
-    await this.connection.query(query);
+    await this.connection.query(query, function (err, result) {
+      if (err) throw err;
+      console.log("1 record inserted");
+    });
   }
 
   // Devolverá todos los ingresos del usuario
   async consultarIngresos(id_usuario){
     const query = `SELECT * FROM ingreso WHERE id_usuario = ${id_usuario}`;
-    const rta = await this.connection.query(query);
+    const rta = await this.connection.query(query, function (err, result) {
+      if (err) throw err;
+      console.log("1 record inserted");
+    });
     return rta.rows;
   }
 
   // No devolverá nada, solo eliminará el ingreso
   async eliminarIngreso(id_ingreso){
     const query = `DELETE FROM ingreso WHERE id_ingreso = ${id_ingreso}`;
-    await this.connection.query(query);
+    await this.connection.query(query, function (err, result) {
+      if (err) throw err;
+      console.log("1 record deleted");
+    });
   }
 }
 

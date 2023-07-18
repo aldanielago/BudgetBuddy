@@ -1,7 +1,7 @@
-const router_usuario = require('../controller/usuario_router');
-const router_ingreso = require('../controller/ingreso_router');
-const router_egreso = require('../controller/egreso_router');
-const router_presupuesto = require('../controller/presupuesto_router');
+const router_usuario = require('../router/usuario_router');
+const router_ingreso = require('../router/ingreso_router');
+const router_egreso = require('../router/egreso_router');
+const router_presupuesto = require('../router/presupuesto_router');
 
 function routerApi(app){
   // app.use('endpoint', enrutamiento)

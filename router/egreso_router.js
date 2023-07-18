@@ -1,7 +1,7 @@
 const express  = require('express');
 
 const router = express.Router();
-const ServiciosEgreso = require('../model/egreso_service');
+const ServiciosEgreso = require('../service/egreso_service');
 const service = new ServiciosEgreso();
 
 // Crear egreso retorna 400 si algo falló o 201 si se creó correctamente

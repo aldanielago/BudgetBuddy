@@ -1,7 +1,7 @@
 const express  = require('express');
 
 const router = express.Router();
-const ServiciosIngreso = require('../model/ingreso_service');
+const ServiciosIngreso = require('../service/ingreso_service');
 const service = new ServiciosIngreso()
 
 // Crear ingreso retorna 400 si algo falló o 201 si se creó correctamente
