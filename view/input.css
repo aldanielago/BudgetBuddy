@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.button {
-    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+.primary-button {
+    @apply hover:bg-light-primary-300 hover:text-black  w-72 h-10 font-Quicksand font-semibold rounded-lg border hover:border-light-acent-200 transition-all duration-500 ease-in-out bg-light-primary-100 text-white focus-visible:border-white focus-visible:border-2;
 }
