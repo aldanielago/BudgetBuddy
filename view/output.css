@@ -768,6 +768,10 @@ select {
   gap: 1rem;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -852,24 +856,14 @@ select {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+:is(.dark .primary-button) {
+  --tw-border-opacity: 1;
+  border-color: rgb(45 45 45 / var(--tw-border-opacity));
+}
+
 :is(.dark .dark\:bg-dark-bg-200) {
   --tw-bg-opacity: 1;
   background-color: rgb(45 45 45 / var(--tw-bg-opacity));
-}
-
-:is(.dark .dark\:text-white) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-:is(.dark .dark\:text-dark-text-200) {
-  --tw-text-opacity: 1;
-  color: rgb(158 158 158 / var(--tw-text-opacity));
-}
-
-:is(.dark .dark\:text-dark-primary-200) {
-  --tw-text-opacity: 1;
-  color: rgb(105 180 255 / var(--tw-text-opacity));
 }
 
 :is(.dark .dark\:text-dark-acent-200) {
