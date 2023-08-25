@@ -19,8 +19,8 @@
         <input type="email" placeholder="Correo" name="correo" minlength="8" maxlength="20" required class="w-72 h-12 font-Quicksand rounded-lg">
       </div>
       <div class="flex justify-center flex-col gap-4">
-        <button type="button" id="sign_up_registrar_usuario" class="primary-button">Crear cuenta</button>
-        <button type="button" id="sign_up_iniciar_sesion" onclick="loginPage()" class="primary-button">Inicia sesión</button>
+        <button type="button" id="sign_up_registrar" class="primary-button">Crear cuenta</button>
+        <button type="button" id="sign_up_iniciar" onclick="loginPage()" class="primary-button">Inicia sesión</button>
       </div>
     </form>
     <figure class="w- h-5/6 overflow-hidden object-cover">
@@ -36,8 +36,8 @@
         <input type="password" class="w-72 h-12 font-Quicksand rounded-lg" placeholder="Contraseña" name="contraseña" required>
       </div>
       <div class="flex justify-center flex-col gap-4">
-        <button type="button" id="iniciar_login" class="primary-button">Inicia sesión</button>
-        <button type="button" id="registrar_login" onclick="signUpPage()" class="primary-button">Registrate</button>
+        <button type="button" id="log_in_iniciar" class="primary-button">Inicia sesión</button>
+        <button type="button" id="log_in_registrar" onclick="signUpPage()" class="primary-button">Registrate</button>
       </div>
     </form>
     <figure class="w- h-5/6 overflow-hidden object-cover">
@@ -97,7 +97,7 @@
         <option value="2">Pagado</option>
         <option value="3">Vencido</option>
       </select>
-      <button type="button" id="registrar_egresos" class="primary-button">Registrar</button>
+      <button type="button" id="registrar_egreso" class="primary-button">Registrar</button>
       <button type="button" onclick="principalPage()" class="primary-button">Cancelar</button>
     </form>
   </section>
