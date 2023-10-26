@@ -1,7 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.primary-button {
-    @apply hover:bg-light-primary-300 hover:text-black  w-72 h-10 font-Quicksand font-semibold rounded-lg border hover:border-light-acent-200 transition-all duration-500 ease-in-out bg-light-primary-100 text-white focus-visible:border-white focus-visible:border-2 dark:border-dark-bg-200;
-}
